@@ -1,0 +1,15 @@
+# LazyVim starter .gitignore (retained)
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# macOS
+.DS_Store
+
+# Editor state / generated
+.luarc.json
