@@ -28,15 +28,35 @@ lazier-vim/
 │   │   ├── keymaps.lua      # jj → <Esc>
 │   │   ├── lazy.lua         # lazy.nvim setup + plugin import order
 │   │   └── options.lua      # pyright LSP, 4-space tabs (shiftwidth etc.)
+│   ├── mdpreview/           # local markdown preview pane (renderer + pane)
+│   │   ├── init.lua         # setup / commands / highlights
+│   │   ├── pane.lua         # side-by-side window lifecycle + live sync
+│   │   ├── render.lua       # block-level extmark renderer
+│   │   └── config.lua       # defaults
 │   └── plugins/
 │       ├── colorscheme.lua  # cyberwave default + catppuccin/kanagawa/rose-pine
 │       ├── example.lua      # upstream starter example (kept verbatim, incl. nvim-tree)
-│       ├── snacks.lua       # snacks picker: show hidden + gitignored files
+│       ├── mdpreview.lua    # loads lua/mdpreview (<leader>mp / :MdPreview)
+│       ├── snacks.lua       # snacks picker + snacks.image (media)
 │       ├── surround.lua     # nvim-surround
 │       ├── telescope.lua    # telescope + fzf-native, show hidden + gitignored
 │       └── transparency.lua # cyberwave transparency (self-contained local plugin)
-└── install.sh               # wires the symlink; --status / --restore
+├── install.sh               # wires the symlink; --status / --restore
+└── docs/
+    ├── markdown-rendering.md # research: rendering markdown inside Neovim + options
+    ├── markdown-sample.md    # every markdown element/edge case, for testing
+    └── mdpreview.md          # the local preview pane: usage, config, limits
 ```
+
+## Docs
+
+- [Markdown rendering inside Neovim](docs/markdown-rendering.md) — feasibility and
+  the full option matrix (in-buffer renderers, browser previews, inline images/math,
+  terminal specifics, and how to build your own).
+- [mdpreview](docs/mdpreview.md) — the local in-terminal preview pane that came out
+  of that research (`<leader>mp` / `<leader>mP` / `:MdPreview`).
+- [Markdown sample](docs/markdown-sample.md) — every element and edge case, for
+  testing the renderer.
 
 ## Install on a new machine
 
